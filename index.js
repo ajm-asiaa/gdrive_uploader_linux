@@ -73,12 +73,13 @@ jwtClient.authorize(function (err, tokens) {
   let targetFile = "CARTA-";
   console.log(os.platform()); // 'darwin'
   console.log(os.release());  //16.6.0
-  let osver = os.release().split(".");
-  if (osver[0] == 16) {
-    targetFile += "10.12";
-  } else if (osver[0] ==15) {
-    targetFile += "10.11";
-  }
+    targetFile += "RH7"
+//let osver = os.release().split(".");
+//if (osver[0] == 16) {
+//    targetFile += "10.12";
+//  } else if (osver[0] ==15) {
+//    targetFile += "10.11";
+//  }
 
   let dateObj = new Date();
   let minute = dateObj.getMinutes();
@@ -124,8 +125,8 @@ jwtClient.authorize(function (err, tokens) {
   targetFile =targetFile+".dmg";
   console.log("upload file new name:", targetFile);
 
-  originFile = "Carta.dmg";
-  contentType = 'application/x-apple-diskimage';
+  originFile = "carta-centos7-test.tar.gz";
+  contentType = 'application/gzip';
 
   writeFile(binaryFileContent(targetFile, contentType,
   originFile, [config.target_folderid]));
