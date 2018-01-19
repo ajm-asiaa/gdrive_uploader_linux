@@ -27,6 +27,7 @@ try {
   console.log("no gdrive.json");
   config.client_email = process.env.drive_email;
 //  config.private_key  = process.env.drive_key;
+  config.private_key = global.private.key;
   config.target_folderid = process.env.drive_folderid;
 }
 console.log("config:", config);
