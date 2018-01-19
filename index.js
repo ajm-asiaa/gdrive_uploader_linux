@@ -124,7 +124,7 @@ jwtClient.authorize(function (err, tokens) {
     targetFile += "-" + currentBranch;
   }
 
-  targetFile =targetFile+".dmg";
+  targetFile =targetFile+".tar.gz";
   console.log("upload file new name:", targetFile);
 
   originFile = "carta-centos7-test.tar.gz";
